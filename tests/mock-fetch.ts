@@ -31,7 +31,7 @@ export const makeFetch = (
   routes: Partial<Record<string, MockResponse>>,
 ): MockFetchHandle => {
   const calls: string[] = [];
-  const mock = vi.fn(async (input: RequestInfo | URL) => {
+  const mock = vi.fn(async (input: string | URL) => {
     const url = typeof input === "string" ? input : input.toString();
     calls.push(url);
     const pathname = new URL(url).pathname;
