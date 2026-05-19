@@ -1,5 +1,5 @@
 {
-  "name": "@unirate/trpc",
+  "name": "trpc-unirate",
   "version": "0.1.0",
   "description": "Pre-built tRPC router for the UniRate currency-exchange API. Drop-in createUniRateRouter() with Zod-validated procedures for convert, rates, historical, time-series, currencies, and VAT.",
   "type": "module",

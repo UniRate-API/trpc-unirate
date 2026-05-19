@@ -9,7 +9,7 @@
 import { initTRPC } from "@trpc/server";
 import { createHTTPServer } from "@trpc/server/adapters/standalone";
 
-import { createUniRateRouter } from "@unirate/trpc";
+import { createUniRateRouter } from "trpc-unirate";
 
 const apiKey = process.env.UNIRATE_API_KEY;
 if (!apiKey) {

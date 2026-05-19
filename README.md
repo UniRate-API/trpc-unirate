@@ -1,6 +1,6 @@
-# @unirate/trpc
+# trpc-unirate
 
-[![npm](https://img.shields.io/npm/v/@unirate/trpc.svg)](https://www.npmjs.com/package/@unirate/trpc)
+[![npm](https://img.shields.io/npm/v/trpc-unirate.svg)](https://www.npmjs.com/package/trpc-unirate)
 [![ci](https://github.com/UniRate-API/trpc-unirate/actions/workflows/ci.yml/badge.svg)](https://github.com/UniRate-API/trpc-unirate/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -11,7 +11,7 @@ UniRate offers **free real-time exchange rates** for 170+ currencies plus VAT da
 ## Install
 
 ```bash
-npm install @unirate/trpc @trpc/server zod
+npm install trpc-unirate @trpc/server zod
 ```
 
 `@trpc/server` and `zod` are peer dependencies — bring your existing versions. Native `fetch` is required (Node ≥ 18.17).
@@ -20,7 +20,7 @@ npm install @unirate/trpc @trpc/server zod
 
 ```ts
 import { initTRPC } from "@trpc/server";
-import { createUniRateRouter } from "@unirate/trpc";
+import { createUniRateRouter } from "trpc-unirate";
 
 const t = initTRPC.create();
 
@@ -88,7 +88,7 @@ createUniRateRouter({
 For tests, you can pass a pre-built client instead of an API key:
 
 ```ts
-import { UniRateClient, createUniRateRouter } from "@unirate/trpc";
+import { UniRateClient, createUniRateRouter } from "trpc-unirate";
 
 const client = new UniRateClient({ apiKey: "test", fetch: mockFetch });
 const router = createUniRateRouter({ client });
