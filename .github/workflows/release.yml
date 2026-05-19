@@ -25,11 +25,7 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - name: Publish to npm
-        # NOTE: --provenance is intentionally omitted for the very first
-        # publish. Some npm flows fail with E404 on new-package PUTs when
-        # provenance signing runs before the package exists in the
-        # registry. Re-enable on subsequent versions once 0.1.0 is live.
-        run: npm publish --access public
+      - name: Publish to npm with provenance
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
